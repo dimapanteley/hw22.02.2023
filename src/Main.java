@@ -22,19 +22,16 @@ public class Main {
             System.out.println("Установите версию приложения для Андроид  по ссылке");
         }
     } // проверка версии ОС
-    public static void cardDeliveryTime(int deliveryDistance) {
-        int deliveryDay = 1;
-        if (deliveryDistance <= 20) {
-            System.out.println("Потребуется дней для доставки " + deliveryDay);
-        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-            System.out.println("Потребуется дней для доставки " + (deliveryDay + 1));
-        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-            System.out.println("Потребуется дней для доставки " + (deliveryDay + 2));
-        } else {
-            System.out.println("Доставки нет");
-        }
+    public static int cardDeliveryTime(int deliveryDistance) {    int deliveryDay = 1;
+        if (deliveryDistance <= 20) {        System.out.println("Потребуется дней для доставки " + deliveryDay);
+        } else if (deliveryDistance > 20 && deliveryDistance <= 60) {        deliveryDay+=1;
+            System.out.println("Потребуется дней для доставки " + (deliveryDay));    } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            deliveryDay+=2;        System.out.println("Потребуется дней для доставки " + (deliveryDay));
+        } else {        deliveryDay=0;
+            System.out.println("Доставки нет");    }
+        return deliveryDay;} // время доставки карты
 
-    } // время доставки карты
+
     public static void main(String[] args) {
         printSeparator();
         int year1=2008;
